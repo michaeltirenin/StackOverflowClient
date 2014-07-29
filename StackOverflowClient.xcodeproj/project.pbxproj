@@ -21,6 +21,7 @@
 		F226E69E1987006600D95D1D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E68C1986E46200D95D1D /* Question.swift */; };
 		F226E69F1987006D00D95D1D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E68E1986E48700D95D1D /* User.swift */; };
 		F226E6A01987007000D95D1D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E6901986E49700D95D1D /* Answer.swift */; };
+		F25AF2BE198837D0005687C5 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25AF2BD198837D0005687C5 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F226E6941986E56800D95D1D /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		F226E6961986E57B00D95D1D /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		F226E6981986E59100D95D1D /* AnswerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTests.swift; sourceTree = "<group>"; };
+		F25AF2BD198837D0005687C5 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F226E66E1986E3E800D95D1D /* ViewController.swift */,
+				F25AF2BD198837D0005687C5 /* NetworkController.swift */,
 				F226E66C1986E3E800D95D1D /* AppDelegate.swift */,
 			);
 			name = Controller;
@@ -255,6 +258,7 @@
 			files = (
 				F226E68F1986E48700D95D1D /* User.swift in Sources */,
 				F226E68D1986E46200D95D1D /* Question.swift in Sources */,
+				F25AF2BE198837D0005687C5 /* NetworkController.swift in Sources */,
 				F226E6911986E49700D95D1D /* Answer.swift in Sources */,
 				F226E66F1986E3E800D95D1D /* ViewController.swift in Sources */,
 				F226E66D1986E3E800D95D1D /* AppDelegate.swift in Sources */,
@@ -451,6 +455,7 @@
 				F226E6851986E3E800D95D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F226E6861986E3E800D95D1D /* Build configuration list for PBXNativeTarget "StackOverflowClientTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +464,7 @@
 				F226E6881986E3E800D95D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
