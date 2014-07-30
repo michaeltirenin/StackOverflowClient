@@ -6,17 +6,18 @@
 //  Copyright (c) 2014 Michael Tirenin. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class User: NSObject {
    
-    var userID : Double?
+    var userID : Int?
     var userLink : NSURL?
     var userDisplayName : String?
     var userType : String? // registered, non-registered, etc.
     var userProfileImageURL : NSURL?
     
-    init(userID : Double, userLink : NSURL, userDisplayName : String, userType : String, userProfileImageURL : NSURL) {
+    init(userID : Int, userLink : NSURL, userDisplayName : String, userType : String, userProfileImageURL : NSURL) {
         self.userID = userID
         self.userLink = userLink
         self.userDisplayName = userDisplayName

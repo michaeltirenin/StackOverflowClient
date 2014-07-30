@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let networkController = NetworkController()
-    
+        
     @IBAction func getDataButton(sender: UIButton) {
         self.networkController.fetchData("dummyString")
     }

@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Michael Tirenin. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class Answer: NSObject {
    
-    var answerCount : Double?
-    var answerScore : Double?
+    var answerCount : Int?
+    var answerScore : Int?
 
-    init(answerCount : Double, answerScore : Double) {
+    init(answerCount : Int, answerScore : Int) {
         self.answerCount = answerCount
         self.answerScore = answerScore
         

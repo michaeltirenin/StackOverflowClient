@@ -11,7 +11,7 @@ import XCTest
 
 class UserTests: XCTestCase {
     
-    var userID : Double = 3814799
+    var userID : Int = 3814799
     var userLink : NSURL = NSURL(string: "http://stackoverflow.com/users/3814799/jake")
     var userDisplayName : String = "Jake"
     var userType : String = "registered"

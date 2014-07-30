@@ -13,12 +13,12 @@ class QuestionTests: XCTestCase {
     
     var questionTitle : String = "Int in swift closure not incrementing"
     var questionLink : NSURL = NSURL(string: "http://stackoverflow.com/questions/25001434/int-in-swift-closure-not-incrementing")
-    var questionID : Double = 25001434
+    var questionID : Int = 25001434
     var questionCreationDate : String = "07/28/2014, 06:05:04 PM"
     var questionLastEditDate : String = "07/28/2014, 07:36:31 PM"
     var questionLastActivityDate : String = "07/28/2014, 08:31:18 PM"
     var questionIsAnswered : Bool = true
-    var questionViewCount : Double = 21
+    var questionViewCount : Int = 21
     
     var question = Question(questionTitle: "Int in swift closure not incrementing", questionLink: NSURL(string: "http://stackoverflow.com/questions/25001434/int-in-swift-closure-not-incrementing"), questionID: 25001434, questionCreationDate: "07/28/2014, 06:05:04 PM", questionLastEditDate: "07/28/2014, 07:36:31 PM", questionLastActivityDate: "07/28/2014, 08:31:18 PM", questionIsAnswered: true, questionViewCount: 21)
     

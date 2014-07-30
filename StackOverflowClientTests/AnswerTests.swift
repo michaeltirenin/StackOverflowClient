@@ -11,8 +11,8 @@ import XCTest
 
 class AnswerTests: XCTestCase {
     
-    var answerCount : Double = 1
-    var answerScore : Double = 0
+    var answerCount : Int = 1
+    var answerScore : Int = 0
 
     var answer = Answer(answerCount: 1, answerScore: 0)
 
