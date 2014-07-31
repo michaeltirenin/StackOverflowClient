@@ -8,45 +8,29 @@
 // api.stackexchange.com/docs
 
 import Foundation
-import UIKit
 
-class Question: NSObject {
+class Question {
     
-//    var questionTitle : String?
-//    var questionLink : NSURL?
+    var title : String?
     var questionID : Int?
-//    var questionCreationDate : String? // will convert to NSDate when necessary
-//    var questionLastEditDate : String? // will convert to NSDate when necessary
-//    var questionLastActivityDate : String? // will convert to NSDate when necessary
-//    var questionIsAnswered : Bool?
-//    var questionViewCount : Int?
+    var tags : [String]?
+    var answer_count : Int?
+    var view_count : Int?
+    var displayName : String?
+    var userID : Int?
+    var last_edit_date : NSDate?
     
-//    init(questionTitle : String, questionLink : NSURL, questionID : Int, questionCreationDate : String, questionLastEditDate : String, questionLastActivityDate : String, questionIsAnswered : Bool, questionViewCount : Int) {
-    init(questionID : Int) {
-        self.questionID = questionID
-//        self.questionLink = questionLink
-//        self.questionID = questionID
-//        self.questionCreationDate = questionCreationDate
-//        self.questionLastEditDate = questionLastEditDate
-//        self.questionLastActivityDate = questionLastActivityDate
-//        self.questionIsAnswered = questionIsAnswered
-//        self.questionViewCount = questionViewCount
-    }
-    
-    class func questionsFromJSON(allQuestionResults: NSArray) -> [Question] {
+    init(itemDict : NSDictionary) {
         
-        var questions = [Question]()
-        
-        if allQuestionResults.count > 0 {
-            
-            for result in allQuestionResults {
-                
-                let question_id = result.objectForKey("question_id") as? Int
-                
-                println(question_id)
-            }
-            // append
+        self.title = itemDict["title"] as? String
+        self.questionID = itemDict["question_id"] as? Int
+        self.answer_count = itemDict["answer_count"] as? Int
+        self.view_count = itemDict["view_count"] as? Int
+        self.displayName = itemDict["display_name"] as? String
+        self.userID = itemDict["user_id"] as? Int
+        self.tags = itemDict["tags"] as? [String]
+        if let lastEditDateEpoch = itemDict["last_edit_date"] as? Double {
+            self.last_edit_date = NSDate(timeIntervalSince1970: lastEditDateEpoch)
         }
-        return questions
-    }
+    }    
 }

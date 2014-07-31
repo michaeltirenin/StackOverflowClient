@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import UIKit
 
-class User: NSObject {
+class User {
    
     var userID : Int?
     var userLink : NSURL?
@@ -17,12 +16,13 @@ class User: NSObject {
     var userType : String? // registered, non-registered, etc.
     var userProfileImageURL : NSURL?
     
-    init(userID : Int, userLink : NSURL, userDisplayName : String, userType : String, userProfileImageURL : NSURL) {
-        self.userID = userID
-        self.userLink = userLink
-        self.userDisplayName = userDisplayName
-        self.userType = userType
-        self.userProfileImageURL = userProfileImageURL
+    init(itemDict: NSDictionary) {
+        
+        self.userID = itemDict["user_id"] as? Int
+        self.userLink = itemDict["link"] as? NSURL
+        self.userDisplayName = itemDict["display_name"] as? String
+        self.userType = itemDict["user_type"] as? String
+        self.userProfileImageURL = itemDict["profile_image"] as? NSURL
 
     }
 }

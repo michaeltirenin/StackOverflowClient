@@ -7,16 +7,16 @@
 //
 
 import Foundation
-import UIKit
 
-class Answer: NSObject {
+class Answer {
    
     var answerCount : Int?
     var answerScore : Int?
 
-    init(answerCount : Int, answerScore : Int) {
-        self.answerCount = answerCount
-        self.answerScore = answerScore
+    init(itemDict: NSDictionary) {
+
+        self.answerCount = itemDict["answer_count"] as? Int
+        self.answerScore = itemDict["score"] as? Int
         
     }
 }
