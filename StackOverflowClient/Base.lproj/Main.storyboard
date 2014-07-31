@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="1j2-IJ-7m4">
             <objects>
-                <viewController id="Bdz-lx-dxo" customClass="ViewController" customModule="StackOverflowClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bdz-lx-dxo" customClass="DetailViewController" customModule="StackOverflowClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vtG-9d-yXk"/>
                         <viewControllerLayoutGuide type="bottom" id="JYb-I2-2Zk"/>
@@ -65,16 +65,24 @@
         <!--Root View Controller-->
         <scene sceneID="6gt-XQ-pkO">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="AGN-2c-55y" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="AGN-2c-55y" customClass="MasterViewTableViewController" customModule="StackOverflowClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iu1-TZ-uKH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RootViewCell" id="ZmW-II-qrB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MasterCell" textLabel="jHY-n4-7xP" style="IBUITableViewCellStyleDefault" id="ZmW-II-qrB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZmW-II-qrB" id="Z2E-dP-m9N">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jHY-n4-7xP">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

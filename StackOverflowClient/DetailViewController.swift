@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDataSource {
     
     var questions : [Question]?
 
@@ -28,10 +28,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let networkController = NetworkController()
         
-        networkController.fetchQuestionsFromSampleData({(questions: [Question]?, errorDescription: String?) -> Void in
-        
-//        var searchTerm = "swift"
-//        networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
+        // used for sample data
+//        networkController.fetchQuestionsFromSampleData({(questions: [Question]?, errorDescription: String?) -> Void in
+            
+        // used for network fetch via search word
+        var searchTerm = "swift"
+        networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
             
             if errorDescription {
                 // alert user of error

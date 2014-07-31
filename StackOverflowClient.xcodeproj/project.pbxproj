@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F226E66D1986E3E800D95D1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E66C1986E3E800D95D1D /* AppDelegate.swift */; };
-		F226E66F1986E3E800D95D1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E66E1986E3E800D95D1D /* ViewController.swift */; };
+		F226E66F1986E3E800D95D1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E66E1986E3E800D95D1D /* DetailViewController.swift */; };
 		F226E6721986E3E800D95D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F226E6701986E3E800D95D1D /* Main.storyboard */; };
 		F226E6741986E3E800D95D1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F226E6731986E3E800D95D1D /* Images.xcassets */; };
 		F226E6801986E3E800D95D1D /* StackOverflowClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E67F1986E3E800D95D1D /* StackOverflowClientTests.swift */; };
@@ -27,6 +27,8 @@
 		F2D7335D1989E6D000661CAA /* SOOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D733591989E6D000661CAA /* SOOwner.m */; };
 		F2D7335E1989E6D000661CAA /* SOSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D7335B1989E6D000661CAA /* SOSearchResponse.m */; };
 		F2D733601989E75B00661CAA /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F2D7335F1989E75B00661CAA /* SampleResponse.json */; };
+		F2D73362198AB16200661CAA /* MasterViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D73361198AB16200661CAA /* MasterViewTableViewController.swift */; };
+		F2D73364198AB2CE00661CAA /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D73363198AB2CE00661CAA /* MasterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 		F226E6671986E3E800D95D1D /* StackOverflowClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F226E66B1986E3E800D95D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F226E66C1986E3E800D95D1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F226E66E1986E3E800D95D1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F226E66E1986E3E800D95D1D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F226E6711986E3E800D95D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F226E6731986E3E800D95D1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F226E6791986E3E800D95D1D /* StackOverflowClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,8 @@
 		F2D7335A1989E6D000661CAA /* SOSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSearchResponse.h; sourceTree = "<group>"; };
 		F2D7335B1989E6D000661CAA /* SOSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSearchResponse.m; sourceTree = "<group>"; };
 		F2D7335F1989E75B00661CAA /* SampleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleResponse.json; sourceTree = "<group>"; };
+		F2D73361198AB16200661CAA /* MasterViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewTableViewController.swift; sourceTree = "<group>"; };
+		F2D73363198AB2CE00661CAA /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 			children = (
 				F226E6701986E3E800D95D1D /* Main.storyboard */,
 				F23BF10119899C99002F90E4 /* QuestionCell.swift */,
+				F2D73363198AB2CE00661CAA /* MasterTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,9 +180,10 @@
 		F226E68B1986E40F00D95D1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F226E66E1986E3E800D95D1D /* ViewController.swift */,
 				F25AF2BD198837D0005687C5 /* NetworkController.swift */,
 				F226E66C1986E3E800D95D1D /* AppDelegate.swift */,
+				F2D73361198AB16200661CAA /* MasterViewTableViewController.swift */,
+				F226E66E1986E3E800D95D1D /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -289,8 +295,10 @@
 				F25AF2BE198837D0005687C5 /* NetworkController.swift in Sources */,
 				F23BF10219899C99002F90E4 /* QuestionCell.swift in Sources */,
 				F226E6911986E49700D95D1D /* Answer.swift in Sources */,
+				F2D73364198AB2CE00661CAA /* MasterTableViewCell.swift in Sources */,
 				F2D7335D1989E6D000661CAA /* SOOwner.m in Sources */,
-				F226E66F1986E3E800D95D1D /* ViewController.swift in Sources */,
+				F226E66F1986E3E800D95D1D /* DetailViewController.swift in Sources */,
+				F2D73362198AB16200661CAA /* MasterViewTableViewController.swift in Sources */,
 				F226E66D1986E3E800D95D1D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
