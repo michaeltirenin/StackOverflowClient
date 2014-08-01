@@ -8,31 +8,47 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     var questions : [Question]?
+        
+    var searchTerm = ""
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 80 // may not be necessary?
+//        self.tableView.estimatedRowHeight = 40 // may not be necessary?
         
-        self.navigationItem.title = "Question Titles"
+        self.navigationItem.title = "Question"
+        
+        self.searchBar.delegate = self
     }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.tableView.reloadData()
+//        self.tableView.dataSource = self
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+//    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar!) {
+        
+        searchTerm = searchBar.text
         
         let networkController = NetworkController()
         
-        // used for sample data
-//        networkController.fetchQuestionsFromSampleData({(questions: [Question]?, errorDescription: String?) -> Void in
-            
-        // used for network fetch via search word
-        var searchTerm = "swift"
         networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
             
             if errorDescription {
@@ -42,10 +58,38 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                 NSOperationQueue.mainQueue().addOperationWithBlock() {
                     self.questions = questions
                     self.tableView.reloadData()
+                    println(questions?.count)
                 }
             }
         })
+        self.searchBar.resignFirstResponder() //removes keyboard
+        self.tableView.reloadData()
     }
+    
+    // used before search bar added
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        let networkController = NetworkController()
+//        
+//        // used for sample data
+////        networkController.fetchQuestionsFromSampleData({(questions: [Question]?, errorDescription: String?) -> Void in
+//            
+//        // used for network fetch via search word
+//        //var searchTerm = "swift" // moved this above
+//        networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
+//            
+//            if errorDescription {
+//                // alert user of error
+//            } else {
+//                // put back on main thread
+//                NSOperationQueue.mainQueue().addOperationWithBlock() {
+//                    self.questions = questions
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        })
+//    }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         
@@ -65,6 +109,25 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         cell.textView.text = question.title
                 
         return cell
+    }
+    // not working for me
+//    func tableView(tableView: UITableView!, didDeselectRowAtIndexPath indexPath: NSIndexPath!) {
+//        println("did select row")
+//        
+//        let webview = self.storyboard.instantiateViewControllerWithIdentifier("webview") as WebViewViewController
+//        webview.question = questions![tableView!.indexPathForSelectedRow().row]
+//
+//        if self.navigationController {
+//            self.navigationController.pushViewController(webview, animated: true)
+//        }
+//    }
+    // using segue instead ...
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "ShowWebview" {
+            let webview = segue.destinationViewController as WebViewViewController
+            webview.question = questions![tableView!.indexPathForSelectedRow().row]
+//          println(tableView!.indexPathForSelectedRow().row)
+            }
     }
 }
 

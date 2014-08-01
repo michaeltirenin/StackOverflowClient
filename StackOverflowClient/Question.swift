@@ -19,6 +19,7 @@ class Question {
     var displayName : String?
     var userID : Int?
     var last_edit_date : NSDate?
+    var questionLink : String?
     
     init(itemDict : NSDictionary) {
         
@@ -32,5 +33,6 @@ class Question {
         if let lastEditDateEpoch = itemDict["last_edit_date"] as? Double {
             self.last_edit_date = NSDate(timeIntervalSince1970: lastEditDateEpoch)
         }
+        self.questionLink = itemDict["link"] as? String
     }    
 }

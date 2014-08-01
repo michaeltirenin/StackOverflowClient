@@ -27,7 +27,7 @@ class NetworkController {
                         
                         let question = Question(itemDict: itemDict)
                         questions += question
-                        //println(question)
+//                        println(question.questionLink)
                     }
                 }
             }

@@ -21,6 +21,7 @@
 		F226E69E1987006600D95D1D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E68C1986E46200D95D1D /* Question.swift */; };
 		F226E69F1987006D00D95D1D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E68E1986E48700D95D1D /* User.swift */; };
 		F226E6A01987007000D95D1D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226E6901986E49700D95D1D /* Answer.swift */; };
+		F23B1DF8198AEE0F0010AE5A /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B1DF7198AEE0F0010AE5A /* WebViewViewController.swift */; };
 		F23BF10219899C99002F90E4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23BF10119899C99002F90E4 /* QuestionCell.swift */; };
 		F25AF2BE198837D0005687C5 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25AF2BD198837D0005687C5 /* NetworkController.swift */; };
 		F2D7335C1989E6D000661CAA /* SOItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D733571989E6D000661CAA /* SOItems.m */; };
@@ -57,6 +58,7 @@
 		F226E6941986E56800D95D1D /* QuestionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		F226E6961986E57B00D95D1D /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		F226E6981986E59100D95D1D /* AnswerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTests.swift; sourceTree = "<group>"; };
+		F23B1DF7198AEE0F0010AE5A /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewViewController.swift; path = ../WebViewViewController.swift; sourceTree = "<group>"; };
 		F23BF10119899C99002F90E4 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		F25AF2BD198837D0005687C5 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F2D733541989E6CF00661CAA /* StackOverflowClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StackOverflowClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -111,15 +113,6 @@
 		F226E6691986E3E800D95D1D /* StackOverflowClient */ = {
 			isa = PBXGroup;
 			children = (
-				F2D733551989E6D000661CAA /* DataModels.h */,
-				F2D733561989E6D000661CAA /* SOItems.h */,
-				F2D733571989E6D000661CAA /* SOItems.m */,
-				F2D733581989E6D000661CAA /* SOOwner.h */,
-				F2D733591989E6D000661CAA /* SOOwner.m */,
-				F2D7335A1989E6D000661CAA /* SOSearchResponse.h */,
-				F2D7335B1989E6D000661CAA /* SOSearchResponse.m */,
-				F2D733541989E6CF00661CAA /* StackOverflowClient-Bridging-Header.h */,
-				F2D7335F1989E75B00661CAA /* SampleResponse.json */,
 				F226E6891986E3F700D95D1D /* Model */,
 				F226E6731986E3E800D95D1D /* Images.xcassets */,
 				F226E66A1986E3E800D95D1D /* Supporting Files */,
@@ -158,6 +151,7 @@
 		F226E6891986E3F700D95D1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F23B1DF4198AEBD30010AE5A /* AutoGen Model */,
 				F226E68C1986E46200D95D1D /* Question.swift */,
 				F226E68E1986E48700D95D1D /* User.swift */,
 				F226E6901986E49700D95D1D /* Answer.swift */,
@@ -184,8 +178,25 @@
 				F226E66C1986E3E800D95D1D /* AppDelegate.swift */,
 				F2D73361198AB16200661CAA /* MasterViewTableViewController.swift */,
 				F226E66E1986E3E800D95D1D /* DetailViewController.swift */,
+				F23B1DF7198AEE0F0010AE5A /* WebViewViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		F23B1DF4198AEBD30010AE5A /* AutoGen Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2D733551989E6D000661CAA /* DataModels.h */,
+				F2D733561989E6D000661CAA /* SOItems.h */,
+				F2D733571989E6D000661CAA /* SOItems.m */,
+				F2D733581989E6D000661CAA /* SOOwner.h */,
+				F2D733591989E6D000661CAA /* SOOwner.m */,
+				F2D7335A1989E6D000661CAA /* SOSearchResponse.h */,
+				F2D7335B1989E6D000661CAA /* SOSearchResponse.m */,
+				F2D733541989E6CF00661CAA /* StackOverflowClient-Bridging-Header.h */,
+				F2D7335F1989E75B00661CAA /* SampleResponse.json */,
+			);
+			name = "AutoGen Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23B1DF8198AEE0F0010AE5A /* WebViewViewController.swift in Sources */,
 				F2D7335C1989E6D000661CAA /* SOItems.m in Sources */,
 				F226E68F1986E48700D95D1D /* User.swift in Sources */,
 				F2D7335E1989E6D000661CAA /* SOSearchResponse.m in Sources */,
