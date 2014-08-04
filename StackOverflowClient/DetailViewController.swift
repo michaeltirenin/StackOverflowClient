@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
     var questions : [Question]?
     var info : [Info]?
+    var networkController = NetworkController()
     
     var searchTerm = ""
     
@@ -24,7 +25,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.dataSource = self
         self.tableView.delegate = self // necessary?
         self.tableView.rowHeight = UITableViewAutomaticDimension
-//        self.tableView.estimatedRowHeight = 5 // may not be necessary?
+//        self.tableView.estimatedRowHeight = 20 // may not be necessary?
         
         self.navigationItem.title = "Question"
                 
@@ -54,9 +55,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         searchTerm = searchBar.text
         
-        let networkController = NetworkController()
-        
-        networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
+        self.networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
             
             if errorDescription {
                 // alert user of error
@@ -144,19 +143,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         let infoVC = self.storyboard.instantiateViewControllerWithIdentifier("info") as InfoViewController
         
-        let networkController = NetworkController()
-        
-        networkController.fetchInfo({(info: [Info]?, errorDescription: String?) -> Void in
-        
-            infoVC.info = info
-            println("goTo")
-            println(info?.count)
-            
-            NSOperationQueue.mainQueue().addOperationWithBlock({() -> Void in
-                self.navigationController.pushViewController(infoVC, animated: true)
-                
-            })
-        })
+        infoVC.networkController = self.networkController
+    
+        self.navigationController.pushViewController(infoVC, animated: true)
     }
 }
 

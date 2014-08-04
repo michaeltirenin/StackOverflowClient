@@ -36,9 +36,7 @@ class NetworkController {
         return questions
     }
     
-    func parseInfo(responseData : NSData) -> [Info] {
-        
-        var info = [Info]()
+    func parseInfo(responseData : NSData) -> Info? {
         
         if let responseDict = NSJSONSerialization.JSONObjectWithData(responseData, options: nil, error: nil) as? NSDictionary {
             
@@ -49,15 +47,14 @@ class NetworkController {
                     if let itemDict = item as? NSDictionary {
                         
                         let information = Info(itemDict: itemDict)
-                        info += information
-                        println(information.newActiveUsers)
-                        println(information.totalAccepted)
-                        println("count", info.count)
+                        
+                        return information
                     }
                 }
             }
         }
-        return info
+        
+        return nil
     }
     
     //use callback
@@ -121,7 +118,7 @@ class NetworkController {
         task.resume()
     }
     
-    func fetchInfo(callback: (info: [Info]?, errorDescription: String?) -> Void) {
+    func fetchInfo(callback: (info: Info?, errorDescription: String?) -> Void) {
 
         let apiDomain = "http://api.stackexchange.com"
         let searchEndpoint = "/2.2/info?site=stackoverflow"
