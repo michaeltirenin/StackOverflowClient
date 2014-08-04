@@ -10,6 +10,8 @@ import UIKit
 
 class MasterViewTableViewController: UITableViewController {
 
+    @IBOutlet var masterTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,11 +40,11 @@ class MasterViewTableViewController: UITableViewController {
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return 3
     }
 
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MasterCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MasterCell", forIndexPath: indexPath) as MasterTableViewCell
 
         cell.textLabel.text = "test"
         

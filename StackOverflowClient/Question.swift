@@ -24,6 +24,7 @@ class Question {
     init(itemDict : NSDictionary) {
         
         self.title = itemDict["title"] as? String
+//        self.title = itemDict.objectForKey("title") as? String // can also be written this way
         self.questionID = itemDict["question_id"] as? Int
         self.answer_count = itemDict["answer_count"] as? Int
         self.view_count = itemDict["view_count"] as? Int

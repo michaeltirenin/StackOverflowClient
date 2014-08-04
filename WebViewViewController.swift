@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewViewController: UIViewController, UIWebViewDelegate, UINavigationControllerDelegate {
+class WebViewViewController: UIViewController, UIWebViewDelegate {
 
     var question : Question!
     
