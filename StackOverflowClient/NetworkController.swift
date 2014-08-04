@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkController {
-    
+        
     let apiDomain = "http://api.stackexchange.com"
     let searchEndpoint = "/2.2/search?order=desc&sort=activity&site=stackoverflow" //important for searchbar term!
     
@@ -27,7 +27,8 @@ class NetworkController {
                         
                         let question = Question(itemDict: itemDict)
                         questions += question
-                        println(question.questionLink)
+//                        println(question.questionLink)
+//                        println(questions)
                     }
                 }
             }
@@ -51,6 +52,7 @@ class NetworkController {
                         info += information
                         println(information.newActiveUsers)
                         println(information.totalAccepted)
+                        println("count", info.count)
                     }
                 }
             }
@@ -111,7 +113,8 @@ class NetworkController {
                     callback(questions: nil, errorDescription: "[Status 429] Too Many Requests: Rate limited")
                         
                     default: println("Sorry. Try again")
-                    callback(questions: nil, errorDescription: "Sorry. Try again")                    }
+                    callback(questions: nil, errorDescription: "Sorry. Try again")
+                    }
                 }
             }
         })
@@ -156,11 +159,11 @@ class NetworkController {
                     callback(info: nil, errorDescription: "[Status 429] Too Many Requests: Rate limited")
                         
                     default: println("Sorry. Try again")
-                    callback(info: nil, errorDescription: "Sorry. Try again")                    }
+                    callback(info: nil, errorDescription: "Sorry. Try again")
+                    }
                 }
             }
-            })
+        })
         task.resume()
     }
-
 }

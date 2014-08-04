@@ -24,7 +24,7 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
 //        self.newActiveUsersLabel.text = info.newActiveUsers
 //        self.totalUsersLabel.text = info.totalUsers
 //        self.totalCommentsLabel.text = info.totalComments
@@ -36,7 +36,6 @@ class InfoViewController: UIViewController {
 //        self.totalUnansweredLabel = info.totalUnanswered
         
         self.navigationItem.title = "Info"
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,10 +44,8 @@ class InfoViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -58,5 +55,4 @@ class InfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

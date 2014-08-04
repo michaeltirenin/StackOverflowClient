@@ -9,14 +9,12 @@
 import UIKit
 
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    
+        
     var questions : [Question]?
     var info : [Info]?
     
     var searchTerm = ""
     
-//    var searchResults = []
-
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -29,9 +27,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //        self.tableView.estimatedRowHeight = 5 // may not be necessary?
         
         self.navigationItem.title = "Question"
-        
-//        self.searchBar.delegate = self
-        
+                
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Info", style: UIBarButtonItemStyle.Plain, target: self, action: "goToInfo")
     }
     
@@ -51,6 +47,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        var info2 = [Info]()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar!) {
@@ -69,7 +66,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 NSOperationQueue.mainQueue().addOperationWithBlock( {() -> Void in
                     self.questions = questions
                     self.tableView.reloadData()
-                    println(self.questions!.count)
+//                    println(self.questions!.count)
                 })
             }
         })
@@ -150,13 +147,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         let networkController = NetworkController()
         
         networkController.fetchInfo({(info: [Info]?, errorDescription: String?) -> Void in
-            
+        
             infoVC.info = info
-//            let info = [Info]()
+            println("goTo")
             println(info?.count)
-                        
+            
             NSOperationQueue.mainQueue().addOperationWithBlock({() -> Void in
-                
                 self.navigationController.pushViewController(infoVC, animated: true)
                 
             })
