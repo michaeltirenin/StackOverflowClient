@@ -26,7 +26,8 @@ class NetworkController {
                     if let itemDict = item as? NSDictionary {
                         
                         let question = Question(itemDict: itemDict)
-                        questions += question
+//                        questions += question
+                        questions.append(question)
 //                        println(question.questionLink)
 //                        println(questions)
                     }
@@ -53,7 +54,6 @@ class NetworkController {
                 }
             }
         }
-        
         return nil
     }
     

@@ -48,7 +48,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        var info2 = [Info]()
+        self.tableView.reloadData()
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar!) {
@@ -57,7 +59,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.networkController.fetchQuestionsForSearchTerm(searchTerm, callback: {(questions: [Question]?, errorDescription: String?) -> Void in
             
-            if errorDescription {
+//            if errorDescription // how it was written for XCode 6 Beta 4
+            if (errorDescription != nil) {
                 // alert user of error
                 println("error")
             } else {
@@ -100,7 +103,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         
-        if self.questions {
+//        if self.questions // how it was written for XCode 6 Beta 4
+        if (self.questions != nil) {
             return self.questions!.count
         } else {
             return 0
