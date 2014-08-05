@@ -26,7 +26,7 @@ class NetworkController {
                     if let itemDict = item as? NSDictionary {
                         
                         let question = Question(itemDict: itemDict)
-//                        questions += question
+//                        questions += question // Beta 5 - can no longer add an array member this way; use append method
                         questions.append(question)
 //                        println(question.questionLink)
 //                        println(questions)
